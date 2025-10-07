@@ -1,0 +1,322 @@
+:root {
+  /* variables */
+  --cg-black: rgb(30, 32, 32);
+  --cg-blue: rgb(98, 210, 156);
+  --cg-grey: rgb(47, 47, 47);
+  --cg-white: rgb(255, 255, 255);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: var(--cg-grey);
+  position: relative;
+  min-height: calc(100vh - 20px);
+  padding: 0;
+  margin: 20px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* CSS for navigation */
+
+.navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 7%;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  background-color: var(--cg-black);
+  color: var(--cg-white);
+  padding: 0px 0px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+
+  /* Debug border */
+  /* border: solid red; */
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  right: 30px;
+  list-style: none;
+
+  /* Debug border */
+  /* border: solid blue; */
+}
+
+.navbar a {
+  color: var(--cg-white);
+  font-weight: bold;
+  margin: 0 12px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  padding: 3px;
+
+  font-family: monospace;
+}
+
+.navbar a:hover {
+  color: var(--cg-blue);
+}
+
+.navbar a:active {
+  color: var(--cg-blue);
+}
+
+.logo a {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.logo {
+  margin-left: 12px;
+}
+
+.logo a:hover {
+  text-decoration: None;
+}
+
+a.selected {
+  border-bottom: 2px solid var(--cg-blue);
+}
+
+main {
+  padding: 0 20px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main p {
+  color: var(--cg-white);
+}
+/* CSS for portfolio grid */
+
+.project {
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+  min-width: 50%;
+  margin: 1em 0 2em 0;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid var(--cg-white);
+
+  /* Debug border */
+  /*border: 2px solid blue;*/
+}
+
+.item-link {
+  width: 70%;
+
+  /* Debug border */
+  /* border: 2px solid red; */
+}
+
+.project-image {
+  object-fit: cover;
+  width: 100%;
+  flex-basis: 50px;
+  flex-grow: 2;
+
+  /* Debug border */
+  /*border: 2px solid black;*/
+}
+
+.project-details {
+  display: flex;
+  background-color: var(--cg-white);
+  flex-shrink: 1;
+  padding: 0 20px;
+  margin: 0px;
+  line-height: 1.5;
+  /*overflow: scroll;*/
+
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  font-weight: lighter;
+
+  /* Debug border */
+  /* border: 2px solid green; */
+}
+
+.project-details a {
+  color: var(--cg-black);
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.project-details p {
+  color: var(--cg-black);
+}
+
+.project-details a:hover {
+  color: var(--cg-blue);
+  text-decoration: none;
+}
+
+.project-name {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* CSS for home page */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+
+  border-radius: 5px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+.about-image img {
+  max-width: 350px;
+  border-radius: 100%;
+  margin-right: 20px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.35);
+}
+
+.about-text {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.about-text h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  font-size: 20px;
+  line-height: 1;
+  color: var(--cg-white);
+}
+
+.about-text p + p {
+  margin-top: 40px;
+}
+
+/* CSS for blog page */
+
+.center {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CSS for resume page */
+
+.resumeimage {
+  max-width: 75vw;
+  border-radius: 15px;
+  margin-bottom: 42px;
+}
+
+.resumedownload {
+  background-color: var(--cg-white);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--cg-blue);
+}
+
+.button {
+  background-color: var(--cg-black);
+  border: none;
+  color: var(--cg-white);
+
+  font-family: monospace;
+
+  padding: 5px 7px;
+  text-align: center;
+
+  border-radius: 2px;
+}
+
+.button:hover {
+  background-color: var(--cg-blue);
+}
+
+.resume h2 {
+  font-family: Georgia;
+}
+
+.entry p {
+  color: var(--cg-black);
+}
+
+/* CSS for contact form */
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: Georgia;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+}
+
+/* Add some spacing to the form */
+form {
+  width: 500px;
+  margin: 0 auto;
+  background-color: var(--cg-white);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.35);
+}
+
+.submit {
+  border: 1px solid rgb(58, 164, 113);
+  background-color: var(--cg-blue);
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* CSS for footer */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cg-black);
+  color: var(--cg-white);
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 10px;
+}
