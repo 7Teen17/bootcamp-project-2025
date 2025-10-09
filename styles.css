@@ -225,6 +225,35 @@ main p {
   justify-content: center;
 }
 
+.blog-post {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  background-color: var(--cg-white);
+  margin-top: 20px;
+  border-radius: 10px;
+  min-height: 210px;
+  padding: 20px;
+}
+
+#blog-container {
+  flex-direction: column;
+  display: flex;
+}
+
+.blog-text {
+  flex-direction: column;
+}
+
+.blog-img {
+  max-width: 200px;
+  margin-right: 10px;
+}
+
+.blog-post p {
+  color: var(--cg-black);
+}
+
 /* CSS for resume page */
 
 .resumeimage {

@@ -1,0 +1,41 @@
+var blogs = [
+    {
+        title: "First Blog Post",
+        date: "10-7-2025",
+        description: "This is my first blog post on this website.",
+        image: "number1.webp",
+        imageAlt: "Image of Blog",
+        slug: "first-blog-post",
+    },
+    {
+        title: "Second Blog Post",
+        date: "10-8-2025",
+        description: "And this is the second post.",
+        image: "number2.webp",
+        imageAlt: "Image of Second Blog",
+        slug: "second-blog-post",
+    },
+];
+var blogContainer = document.getElementById("blog-container");
+blogs.forEach(function (blog) {
+    var post = document.createElement("div");
+    post.classList.add("blog-post");
+    var image = document.createElement("img");
+    image.classList.add("blog-img");
+    image.src = blog.image;
+    image.alt = blog.imageAlt;
+    post.append(image);
+    var blogText = document.createElement("div");
+    blogText.classList.add("blog-text");
+    var title = document.createElement("h1");
+    title.textContent = blog.title;
+    blogText.append(title);
+    var description = document.createElement("h2");
+    description.textContent = blog.description;
+    blogText.append(description);
+    var date = document.createElement("p");
+    date.textContent = blog.date;
+    blogText.append(date);
+    post.append(blogText);
+    blogContainer === null || blogContainer === void 0 ? void 0 : blogContainer.append(post);
+});
