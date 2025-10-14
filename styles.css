@@ -233,7 +233,9 @@ main p {
   margin-top: 20px;
   border-radius: 10px;
   min-height: 210px;
+  width: 60%;
   padding: 20px;
+  text-decoration: none;
 }
 
 #blog-container {

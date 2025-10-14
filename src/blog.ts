@@ -24,12 +24,21 @@ const blogs: Blog[] = [
     imageAlt: "Image of Second Blog",
     slug: "second-blog-post",
   },
+  {
+    title: "Third Blog Post",
+    date: "10-13-2025",
+    description: "And this is the third post.",
+    image: "number3.webp",
+    imageAlt: "Image of Third Blog",
+    slug: "third-blog-post",
+  },
 ];
 
 const blogContainer = document.getElementById("blog-container");
 
 blogs.forEach((blog) => {
-  const post = document.createElement("div");
+  const post = document.createElement("a");
+  post.href = "blog/" + blog.slug + ".html";
   post.classList.add("blog-post");
 
   const image = document.createElement("img");
