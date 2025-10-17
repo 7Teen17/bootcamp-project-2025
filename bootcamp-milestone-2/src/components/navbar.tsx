@@ -15,7 +15,7 @@ export default function Navbar() {
             <Link href="/" className="hover:text-green-300">
               Home
             </Link>
-            <Link href="/blogs" className="hover:text-green-300">
+            <Link href="/blog" className="hover:text-green-300">
               Blogs
             </Link>
             <Link href="/portfolio" className="hover:text-green-300">
