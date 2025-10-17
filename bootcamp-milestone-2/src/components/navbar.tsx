@@ -11,7 +11,7 @@ export default function Navbar() {
           Dominic Siino
         </h1>
         <nav className="w-1/4">
-          <ul className="w-full flex flex-row justify-around font-(family-name:--font-geist-sans)">
+          <ul className="w-full flex flex-row justify-around font-(family-name:--font-geist-mono)">
             <Link href="/" className="hover:text-green-300">
               Home
             </Link>
