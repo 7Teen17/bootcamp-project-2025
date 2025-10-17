@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     //Wrapper to put space around Navbar while keeping it width:100%
     <header className="p-5">
-      <div className="sticky w-full h-20 bg-black flex flex-row justify-between text-white items-center p-5 rounded-xl">
+      <div className="sticky w-full h-20 bg-stone-700 flex flex-row justify-between text-white items-center p-5 rounded-xl drop-shadow-xl/30">
         <h1 className="font-(family-name:--font-geist-mono) font-bold text-4xl pl-3">
           Dominic Siino
         </h1>

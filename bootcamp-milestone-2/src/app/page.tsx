@@ -6,7 +6,7 @@ export default function Home() {
         alt="Cal Poly Logo, Learn by Doing"
         className="size-100 rounded-full"
       />
-      <div className="text-center pt-12">
+      <div className="text-center pt-12 text-xl text-white">
         <p>
           <strong>Hello!</strong> My name is
           <strong> Dominic Siino</strong> and I am a Computer Science major at
