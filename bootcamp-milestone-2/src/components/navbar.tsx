@@ -24,7 +24,7 @@ export default function Navbar() {
             <Link href="/resume" className="hover:text-green-300">
               Resume
             </Link>
-            <Link href="/about" className="hover:text-green-300">
+            <Link href="/contact" className="hover:text-green-300">
               Contact
             </Link>
           </ul>
