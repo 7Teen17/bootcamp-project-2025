@@ -5,4 +5,5 @@ export interface Blog {
   image: string;
   imageAlt: string;
   slug: string;
+  text: string;
 }
