@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Blog } from "@/typings/blog";
 
 export default function BlogPreview(props: Blog) {
+  const date = new Date(props.date).toDateString();
   return (
     <Link
       href={`/blog/${props.slug}`}
@@ -22,7 +23,7 @@ export default function BlogPreview(props: Blog) {
           <strong> {props.title} </strong>
         </h3>
         <p>{props.description}</p>
-        <p>{props.date}</p>
+        <p>{date}</p>
       </div>
     </Link>
   );
