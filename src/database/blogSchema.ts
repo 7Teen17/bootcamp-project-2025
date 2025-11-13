@@ -1,5 +1,7 @@
 import { Blog } from "@/typings/blog";
 import mongoose, { Schema } from "mongoose";
+import connectDB from "./db";
+import { NextResponse } from "next/server";
 
 const blogSchema = new Schema<Blog>({
   title: { type: String, required: true },
@@ -14,4 +16,28 @@ const blogSchema = new Schema<Blog>({
 const BlogModel =
   mongoose.models["blogs"] || mongoose.model("blogs", blogSchema);
 
+async function getBlogs() {
+  await connectDB(); // function from db.ts before
+
+  try {
+    // query for all blogs and sort by date
+    const blogs = await BlogModel.find().sort({ date: -1 }).orFail();
+    // send a response as the blogs as the message
+    return blogs;
+  } catch (err) {
+    return null;
+  }
+}
+
+async function getBlogBySlug(slug: string): Promise<NextResponse> {
+  await connectDB(); // function from db.ts before
+  try {
+    const blog = await BlogModel.findOne({ slug }).orFail();
+    return NextResponse.json(blog);
+  } catch (err) {
+    return NextResponse.json("Blog not found.", { status: 404 });
+  }
+}
+
 export default BlogModel;
+export { getBlogs, getBlogBySlug };
