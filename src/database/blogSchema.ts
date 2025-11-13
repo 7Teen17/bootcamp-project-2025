@@ -17,12 +17,10 @@ const BlogModel =
   mongoose.models["blogs"] || mongoose.model("blogs", blogSchema);
 
 async function getBlogs() {
-  await connectDB(); // function from db.ts before
+  await connectDB();
 
   try {
-    // query for all blogs and sort by date
     const blogs = await BlogModel.find().sort({ date: -1 }).orFail();
-    // send a response as the blogs as the message
     return blogs;
   } catch (err) {
     return null;
