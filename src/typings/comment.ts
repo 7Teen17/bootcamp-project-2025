@@ -1,4 +1,4 @@
-export interface Comment {
+export interface IComment {
   author: string;
   content: string;
   date: Date;

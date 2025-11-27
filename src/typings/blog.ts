@@ -1,3 +1,5 @@
+import { IComment } from "./comment";
+
 export interface Blog {
   title: string;
   date: Date;
@@ -6,4 +8,5 @@ export interface Blog {
   imageAlt: string;
   slug: string;
   text: string;
+  comments: IComment[];
 }

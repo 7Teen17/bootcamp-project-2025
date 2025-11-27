@@ -2,6 +2,13 @@ import { Blog } from "@/typings/blog";
 import mongoose, { Schema } from "mongoose";
 import connectDB from "./db";
 import { NextResponse } from "next/server";
+import { IComment } from "@/typings/comment";
+
+const commentSchema = new Schema<IComment>({
+  author: { type: String, required: true },
+  content: { type: String, required: true },
+  date: { type: Date, required: false, default: Date.now },
+});
 
 const blogSchema = new Schema<Blog>({
   title: { type: String, required: true },
@@ -11,6 +18,7 @@ const blogSchema = new Schema<Blog>({
   imageAlt: { type: String, required: true },
   slug: { type: String, required: true },
   text: { type: String, required: true },
+  comments: [commentSchema],
 });
 
 const BlogModel =
