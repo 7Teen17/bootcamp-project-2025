@@ -22,7 +22,10 @@ const blogSchema = new Schema<Blog>({
 });
 
 const BlogModel =
-  mongoose.models["blogs"] || mongoose.model("blogs", blogSchema);
+  mongoose.models?.["blogs"] || mongoose.model("blogs", blogSchema);
+
+const CommentModel =
+  mongoose.models?.["comments"] || mongoose.model("comments", commentSchema);
 
 async function getBlogs() {
   await connectDB();
@@ -46,4 +49,17 @@ async function getBlogBySlug(slug: string): Promise<NextResponse> {
 }
 
 export default BlogModel;
-export { getBlogs, getBlogBySlug };
+export { getBlogs, getBlogBySlug, CommentModel };
+export async function addCommentToBlog(slug: string, comment: IComment) {
+  await connectDB();
+  try {
+    const updated = await BlogModel.findOneAndUpdate(
+      { slug },
+      { $push: { comments: comment } },
+      { new: true }
+    ).orFail();
+    return updated;
+  } catch (err) {
+    return null;
+  }
+}

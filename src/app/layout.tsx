@@ -5,6 +5,10 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
+import emailjs from "@emailjs/browser";
+
+emailjs.init({ publicKey: "Y7VKHMzlpy-9Pzkv9" });
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

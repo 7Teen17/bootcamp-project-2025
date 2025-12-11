@@ -2,6 +2,7 @@ import { getBlogBySlug } from "@/database/blogSchema";
 import { Blog } from "@/typings/blog";
 import Image from "next/image";
 import Comment from "@/components/comment";
+import CommentForm from "@/components/commentForm";
 
 type PageProps = { params: { slug: string } };
 
@@ -19,7 +20,6 @@ export default async function BlogPage({ params }: PageProps) {
       </div>
     );
   }
-  console.log(blog.comments);
   return (
     <div className="flex flex-1 flex-row items-stretch justify-start text-white h-full">
       <div className="flex flex-col items-center space-y-5 flex-3 p-5 px-15">
@@ -48,6 +48,7 @@ export default async function BlogPage({ params }: PageProps) {
             key={index}
           />
         ))}
+        <CommentForm slug={slug} />
       </div>
     </div>
   );
